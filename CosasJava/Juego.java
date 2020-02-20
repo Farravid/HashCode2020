@@ -17,24 +17,18 @@ public class Juego {
 			lectura = new BufferedReader(ficheroLectura);
 			escritura = new BufferedWriter(ficheroEscritura);
 			//Esta puta mierda lee hasta que encuentre la palabra
-			while(!(linea.equals(""))) {
-				linea = lectura.readLine();
-				if(!(linea.equals(""))) {
-					
-				}
-			}
 			//Esta mierda lee el fichero
 			while(linea != null) {
 				linea = lectura.readLine();
 				if(linea != null) {
-
+					System.out.println(linea);
 				}
 			}
 			//Esta otra mierda escribe
-			while(empieza >= 0) {
+			/*while(empieza >= 0) {
 				for(int i = empieza; i < 4; i++) {
 					if(jugadores[i] != null) {
-							fichaAux = jugadores[i].juega(tablero);
+						fichaAux = jugadores[i].juega(tablero);
 						if(fichaAux != null)
 							escritura.write(jugadores[i].getNombre() + " juega " + fichaAux.toString() + "\n");
 						else {
@@ -44,7 +38,7 @@ public class Juego {
 					}
 				}
 				empieza = 0;
-			}
+			}*/
 		}
 		catch(IOException e) {
 			e.printStackTrace();
