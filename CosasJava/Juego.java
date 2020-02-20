@@ -16,7 +16,6 @@ public class Juego {
 			ficheroEscritura = new FileWriter(args[1]);
 			lectura = new BufferedReader(ficheroLectura);
 			escritura = new BufferedWriter(ficheroEscritura);
-			//Esta puta mierda lee hasta que encuentre la palabra
 			//Esta mierda lee el fichero
 			while(linea != null) {
 				linea = lectura.readLine();
