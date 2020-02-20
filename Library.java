@@ -60,6 +60,10 @@ public class Library{
 		return librosDia;
 	}
 
+	public int getLibrosToScan(){
+		return librosToScan;
+	}
+
 	public int registro(int diaActual, int diasTotales){
 		librosToScan = diasTotales - (time+diaActual);
 		librosToScan = librosToScan * librosDia;
