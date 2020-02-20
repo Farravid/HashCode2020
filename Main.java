@@ -91,7 +91,7 @@ public class Main {
 
 				for(int j=0;j<librosmax;j++){
 					if(librosL.get(j).getEscaneado()==false){
-						librosL.get(j).getEscaneado()=true;
+						librosL.get(j).setEscaneado();
 						score=score+librosL.get(j).getScore();
 					}
 				}
