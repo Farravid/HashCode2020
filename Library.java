@@ -8,6 +8,7 @@ public class Library{
 	private int time;
 	private int librosDia;
 	private int librosToScan;
+	private boolean registrada;
 
 	public Library(int id, int time, int librosDia){
 		libros = new ArrayList<Book>();
@@ -26,6 +27,7 @@ public class Library{
 		}else{
 			this.librosDia = librosDia;
 		}
+		registrada = false;
 	}
 
 	public int getId(){
@@ -64,9 +66,17 @@ public class Library{
 		return librosToScan;
 	}
 
+	public boolean getRegistrada(){
+		return registrada;
+	}
+
 	public int registro(int diaActual, int diasTotales){
 		librosToScan = diasTotales - (time+diaActual);
 		librosToScan = librosToScan * librosDia;
+		if(librosToScan>libros.size()){
+			librosToScan = libros.size();
+		}
+		registrada = true;
 		return time+diaActual;
 	}
 

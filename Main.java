@@ -39,10 +39,6 @@ public class Main {
 				libros.add(libroAux);
 			}
 
-			// for(int i=0; i<scores.size(); i++){
-			// 	System.out.println(libros.get(i).getId() + " , " + libros.get(i).getScore());
-			// }
-
 			//Esta mierda lee el fichero
 			int librosEnBiblioteca = 0;
 			Library libreriaAux = new Library(0, 0, 0);
@@ -54,12 +50,12 @@ public class Main {
 						librosEnBiblioteca = Integer.parseInt(arrayAux[0]);
 						libreriaAux = new Library(idLibreria, Integer.parseInt(arrayAux[1]), Integer.parseInt(arrayAux[2]));
 						librerias.add(libreriaAux);
+						idLibreria++;
 					}else{
 						for(int i=0; i<arrayAux.length; i++){
 							libreriaAux.insertBook(libros.get(Integer.parseInt(arrayAux[i])));
 						}
 					}
-					idLibreria++;
 					numLinea++;
 				}
 			}
@@ -69,38 +65,59 @@ public class Main {
 					System.out.println("\t" + "Libro " + j + " : " + librerias.get(i).getLibros().get(j).getId() + " , " + librerias.get(i).getLibros().get(j).getScore());
 				}
 			}
-			//Esta otra mierda escribe
-			/*while(empieza >= 0) {
-				for(int i = empieza; i < 4; i++) {
-					if(jugadores[i] != null) {
-						fichaAux = jugadores[i].juega(tablero);
-						if(fichaAux != null)
-							escritura.write(jugadores[i].getNombre() + " juega " + fichaAux.toString() + "\n");
-						else {
-							escritura.write(jugadores[i].getNombre() + " juega null" + "\n");
-							escritura.write(jugadores[i].getNombre() + " roba " + jugadores[i].roba(saco) + "\n");
+
+
+
+			int diaActual = 0;
+			int contador = 0;
+			while(diaActual< descripcion.get(2) && contador<librerias.size()){
+				if((descripcion.get(2) - diaActual) >= librerias.get(contador).getTime()){
+					diaActual = librerias.get(contador).registro(diaActual,descripcion.get(2));
+				}
+				contador++;
+			}
+
+			int score=0;
+			for(int i=0; i<librerias.size();i++){
+				if(librerias.get(i).getRegistrada()){
+					ArrayList<Book> librosL= librerias.get(i).getLibros();
+					int librosmax=librerias.get(i).getLibrosToScan();
+					System.out.println(librerias.get(i).getLibrosToScan());
+					for(int j=0;j<librosmax;j++){
+						if(librosL.get(j).getEscaneado()==false){
+							librosL.get(j).setEscaneo();
+							score=score+librosL.get(j).getScore();
 						}
 					}
 				}
-				empieza = 0;
-			}*/
-			int score=0;
-			for (int=i;i<librerias.size();i++ ) {
-				ArrayList<Book> librosL= librerias.get(i).getLibros();
-				int librosmax=librerias.get(i).getLibrosToScan();
-
-				for(int j=0;j<librosmax;j++){
-					if(librosL.get(j).getEscaneado()==false){
-						librosL.get(j).setEscaneado();
-						score=score+librosL.get(j).getScore();
-					}
-				}
 			}
+			System.out.println(score);
+			// while(diaActual < descripcion.get(2)){
+			// 	for (int i= 0;i<librerias.size();i++ ) {
+			// 		ArrayList<Book> librosL= librerias.get(i).getLibros();
+			// 		int librosmax=librerias.get(i).getLibrosToScan();
+			// 		for(int j=0;j<librosmax;j++){
+			// 			if(librosL.get(j).getEscaneado()==false){
+			// 				librosL.get(j).setEscaneo();
+			// 				score=score+librosL.get(j).getScore();
+			// 			}
+			// 		}
+			// 	}
+			// } 
+			
+			//Escritura
+		escritura.write(descripcion.get(1).toString()+"\n");
+		// String idLibreriass = 0, librosCapaces=0;
+		for(int i=0;i<librerias.size();i++){
+			// idLibreriass = libre
+			escritura.write(Integer.toString(librerias.get(i).getId())+" "+Integer.toString(librerias.get(i).getLibrosToScan())+"\n");
+			for(int j=0;j<librerias.get(i).getLibrosToScan();j++){
+				//raquel
+				escritura.write(Integer.toString(librerias.get(i).getLibros().get(j).getId())+" ");
+			}
+			escritura.write("\n");
 		}
-
-
-		//Escritura
-		escritura.write(descripcion.get(1));
+		}
 
 		catch(IOException e) {
 			e.printStackTrace();
