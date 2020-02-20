@@ -92,18 +92,6 @@ public class Main {
 				}
 			}
 			System.out.println(score);
-			// while(diaActual < descripcion.get(2)){
-			// 	for (int i= 0;i<librerias.size();i++ ) {
-			// 		ArrayList<Book> librosL= librerias.get(i).getLibros();
-			// 		int librosmax=librerias.get(i).getLibrosToScan();
-			// 		for(int j=0;j<librosmax;j++){
-			// 			if(librosL.get(j).getEscaneado()==false){
-			// 				librosL.get(j).setEscaneo();
-			// 				score=score+librosL.get(j).getScore();
-			// 			}
-			// 		}
-			// 	}
-			// } 
 			
 			//Escritura
 		escritura.write(descripcion.get(1).toString()+"\n");

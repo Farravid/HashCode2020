@@ -71,12 +71,20 @@ public class Library{
 	}
 
 	public int registro(int diaActual, int diasTotales){
-		librosToScan = diasTotales - (time+diaActual);
+		System.out.println("Time vale: "+time);
+		System.out.println("Dia actual: "+diaActual);
+		System.out.println("Dias totales: "+diasTotales);
+		librosToScan = diasTotales - (time+diaActual-1);
+		System.out.println("Aqui que valgo"+ librosToScan);
 		librosToScan = librosToScan * librosDia;
+		System.out.println("Libros to Scan: "+librosToScan);
 		if(librosToScan>libros.size()){
 			librosToScan = libros.size();
 		}
+
+		System.out.println("Final libros to Scan es: "+librosToScan);
 		registrada = true;
+		System.out.println("Devuelvo esto: "+time+diaActual);
 		return time+diaActual;
 	}
 
