@@ -45,7 +45,7 @@ public class Main {
 
 			//Esta mierda lee el fichero
 			int librosEnBiblioteca = 0;
-			Library libreriaAux;
+			Library libreriaAux = new Library(0, 0, 0);
 			while(linea != null) {
 				linea = lectura.readLine();
 				if(linea != null) {
@@ -60,6 +60,12 @@ public class Main {
 						}
 					}
 					idLibreria++;
+				}
+			}
+			for(int i=0; i<librerias.size(); i++){
+				System.out.println("Libreria " + i);
+				for(int j=0; j<librerias.get(i).getLibros().size(); j++){
+					System.out.println("\t" + "Libro " + j + " : " + librerias.get(i).getLibros().get(j).getId() + " , " + librerias.get(i).getLibros().get(j).getScore());
 				}
 			}
 			//Esta otra mierda escribe
