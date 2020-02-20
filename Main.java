@@ -84,6 +84,15 @@ public class Main {
 				}
 				empieza = 0;
 			}*/
+			int score=0;
+			for (int=i;i<librerias.size();i++ ) {
+				ArrayList<Book> librosL= librerias.get(i).getLibros();
+				int librosmax=librerias.get(i).getLibrosToScan();
+
+				for(int j=0;j<librosmax;j++){
+					if(librosL.get(j).)
+				}
+			}
 		}
 		catch(IOException e) {
 			e.printStackTrace();
