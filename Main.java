@@ -60,6 +60,7 @@ public class Main {
 						}
 					}
 					idLibreria++;
+					numLinea++;
 				}
 			}
 			for(int i=0; i<librerias.size(); i++){
