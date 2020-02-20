@@ -55,7 +55,9 @@ public class Main {
 						libreriaAux = new Library(idLibreria, Integer.parseInt(arrayAux[1]), Integer.parseInt(arrayAux[2]));
 						librerias.add(libreriaAux);
 					}else{
-
+						for(int i=0; i<arrayAux.length; i++){
+							libreriaAux.insertBook(libros.get(Integer.parseInt(arrayAux[i])));
+						}
 					}
 					idLibreria++;
 				}
