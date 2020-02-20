@@ -37,7 +37,7 @@ public class Book{
 		return score;
 	}
 
-	public void setScore(scoreLibro){
+	public void setScore(int scoreLibro){
 		if(scoreLibro<0){
 			score = -1;
 		}else{
