@@ -93,6 +93,11 @@ public class Main {
 				}
 			}
 		}
+
+
+		//Escritura
+		escritura.write(descripcion.get(1));
+
 		catch(IOException e) {
 			e.printStackTrace();
 		}
