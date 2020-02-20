@@ -89,7 +89,10 @@ public class Main {
 				int librosmax=librerias.get(i).getLibrosToScan();
 
 				for(int j=0;j<librosmax;j++){
-					if(librosL.get(j).)
+					if(librosL.get(j).getEscaneado()==false){
+						librosL.get(j).getEscaneado()=true;
+						score=score+librosL.get(j).getScore();
+					}
 				}
 			}
 		}
