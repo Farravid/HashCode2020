@@ -60,6 +60,7 @@ public class Main {
 					numLinea++;
 				}
 			}
+			// Esto muestra la info de las librerías y los libros dentro de cada librería
 			// for(int i=0; i<librerias.size(); i++){
 			// 	System.out.println("Libreria " + i);
 			// 	for(int j=0; j<librerias.get(i).getLibros().size(); j++){
