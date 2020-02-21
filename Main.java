@@ -44,14 +44,15 @@ public class Main {
 			Library libreriaAux = new Library(0, 0, 0);
 			while(linea != null) {
 				linea = lectura.readLine();
-				if(linea != null) {
+				if(linea != null && !linea.equals(" ")) {
 					arrayAux = linea.split(" ");
-					if(numLinea % 2 != 0){
-						librosEnBiblioteca = Integer.parseInt(arrayAux[0]);
+					System.out.println(numLinea + " , " + arrayAux.length + " , " + arrayAux[0]);
+					if(numLinea % 2 != 0 && arrayAux.length == 3){
+						//librosEnBiblioteca = Integer.parseInt(arrayAux[0]);
 						libreriaAux = new Library(idLibreria, Integer.parseInt(arrayAux[1]), Integer.parseInt(arrayAux[2]));
 						librerias.add(libreriaAux);
 						idLibreria++;
-					}else{
+					}else if(numLinea % 2 == 0 && arrayAux.length > 0){
 						for(int i=0; i<arrayAux.length; i++){
 							libreriaAux.insertBook(libros.get(Integer.parseInt(arrayAux[i])));
 						}
@@ -59,12 +60,12 @@ public class Main {
 					numLinea++;
 				}
 			}
-			for(int i=0; i<librerias.size(); i++){
-				System.out.println("Libreria " + i);
-				for(int j=0; j<librerias.get(i).getLibros().size(); j++){
-					System.out.println("\t" + "Libro " + j + " : " + librerias.get(i).getLibros().get(j).getId() + " , " + librerias.get(i).getLibros().get(j).getScore());
-				}
-			}
+			// for(int i=0; i<librerias.size(); i++){
+			// 	System.out.println("Libreria " + i);
+			// 	for(int j=0; j<librerias.get(i).getLibros().size(); j++){
+			// 		System.out.println("\t" + "Libro " + j + " : " + librerias.get(i).getLibros().get(j).getId() + " , " + librerias.get(i).getLibros().get(j).getScore());
+			// 	}
+			// }
 
 
 
